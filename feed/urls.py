@@ -1,8 +1,15 @@
 from django.urls import path
-from .views import HomePageView
+from .views import HomePageView, PostDetailView
+from django.conf import settings
+from django.conf.urls.static import static
 app_name = 'feed'
 
 urlpatterns = [
 
     path('', HomePageView.as_view(), name='index'),
+    path('detail/<int:pk>/', PostDetailView.as_view(), name="detail"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
