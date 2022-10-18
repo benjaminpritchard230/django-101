@@ -5,6 +5,8 @@
 
 {% block body %} 
 
+    <a href="{% url 'feed:post' %}">Add a new post &rarr;</a>
+    <hr>
     {% for post in posts %}
     <a href="{% url 'feed:detail' post.id %}">More details</a>
         {{ post.text }} <br>
