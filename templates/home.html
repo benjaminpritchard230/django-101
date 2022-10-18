@@ -6,6 +6,7 @@
 {% block body %} 
 
     {% for post in posts %}
+    <a href="{% url 'feed:detail' post.id %}">More details</a>
         {{ post.text }} <br>
 
         {% thumbnail post.image "100x100" crop="center" as im %}

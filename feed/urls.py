@@ -7,7 +7,7 @@ app_name = 'feed'
 urlpatterns = [
 
     path('', HomePageView.as_view(), name='index'),
-    path('detail/<int:pk>/', PostDetailView.as_view(), name="detail"),
+    path('info/<int:pk>/', PostDetailView.as_view(), name="detail"),
 ]
 
 if settings.DEBUG:
